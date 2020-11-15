@@ -74,7 +74,7 @@ async def boss_info(boss = 'B5', reverse = False):
     res_str = ''
     cnt = 0
     for s in bossinfo:
-        if s['is_continue']:
+        if reverse and s['is_continue']:
             continue
         cnt += 1
         res_str += '\n' + str(s['nickname']) + ': ' + str(s['score'])

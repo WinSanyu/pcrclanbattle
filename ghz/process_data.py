@@ -5,8 +5,10 @@ from ghz.data import get_data_from_bot
 def _get_boss(challenge):
     if challenge['cycle'] == 1:
         return 'A{}'.format(challenge['boss_num'])
-    else:
+    elif challenge['cycle'] == 2:
         return 'B{}'.format(challenge['boss_num'])
+    elif challenge['cycle'] == 3:
+        return 'C{}'.format(challenge['boss_num'])        
 
 def _get_day(challenge, challenges):
     '''
@@ -77,6 +79,11 @@ async def processing_challenges(challenges_from_bot=None, day_first=1, day_end=5
         'B3': [], 
         'B4': [], 
         'B5': [], 
+        'C1': [], 
+        'C2': [], 
+        'C3': [], 
+        'C4': [], 
+        'C5': [], 
         }
     for i, challenge in enumerate(challenges):
         boss = _get_boss(challenge)
